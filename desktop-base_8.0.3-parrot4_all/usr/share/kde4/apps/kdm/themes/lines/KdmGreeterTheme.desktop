@@ -1,0 +1,8 @@
+[KdmGreeterTheme]
+Encoding=UTF-8
+Greeter=lines.xml
+Name=Lines
+Description=Default KDM theme for Debian 8 Jessie
+Author=Juliette Taka BELIN, Aurélien COUDERC, Adrien Aubourg
+Copyright=(c) 2014 Juliette Taka BELIN <juliette.belin@free.fr>, (c) 2014 Aurélien COUDERC <zecoucou@free.fr>, Adrien Aubourg
+Screenshot=screenshot.png
