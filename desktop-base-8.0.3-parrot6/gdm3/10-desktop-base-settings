@@ -1,0 +1,7 @@
+[org/gnome/desktop/background]
+picture-uri='file:///usr/share/images/desktop-base/login-background.png'
+picture-options='zoom'
+[org.gnome.login-screen]
+logo='/usr/share/desktop-base/parrot-logo.png'
+fallback-logo='/usr/share/desktop-base/parrot-logo.png'
+

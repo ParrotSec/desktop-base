@@ -1,0 +1,18 @@
+Package: desktop-base
+Version: 8.0.2+parrot6
+Architecture: all
+Maintainer: Lorenzo "Palinuro" Faletra <palinuro@frozenbox.org>
+Installed-Size: 92053
+Pre-Depends: dpkg (>= 1.15.7.2~)
+Depends: librsvg2-common
+Suggests: parrot-interface, parrot-mate | parrot-xfce | parrot-kde | parrot-gnome | parrot-lxde | kde-standard | xfce4 | wmaker
+Section: x11
+Priority: optional
+Homepage: http://www.debian.org/devel/debian-desktop
+Description: common files for the Debian Desktop
+ This package contains various miscellaneous files which are used by
+ Debian Desktop installations.  Currently, it provides some
+ Debian-related artwork and themes, .desktop files containing links to
+ Debian related material (suitable for placement on a user's desktop),
+ and other common files between the available desktop environments
+ such as GNOME and KDE.

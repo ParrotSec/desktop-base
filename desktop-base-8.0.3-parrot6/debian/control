@@ -1,0 +1,23 @@
+Source: desktop-base
+Section: x11
+Priority: optional
+Maintainer: Lorenzo "Palinuro" Faletra <palinuro@frozenbox.org>
+Uploaders: Lorenzo "Palinuro" Faletra <palinuro@frozenbox.org>
+Build-Depends: cdbs (>= 0.4.93), debhelper (>= 9)
+Standards-Version: 3.9.6
+Homepage: http://www.debian.org/devel/debian-desktop
+Vcs-Browser: http://svn.debian.org/wsvn/debian-desktop/packages/trunk/desktop-base
+Vcs-Svn: svn://svn.debian.org/debian-desktop/packages/trunk/desktop-base
+
+Package: desktop-base
+Architecture: all
+Depends: librsvg2-common
+Pre-Depends: dpkg (>= 1.15.7.2~)
+Suggests: parrot-interface, parrot-mate | parrot-xfce | parrot-kde | parrot-gnome | parrot-lxde | kde-standard | xfce4 | wmaker
+Description: common files for the Debian Desktop
+ This package contains various miscellaneous files which are used by
+ Debian Desktop installations.  Currently, it provides some
+ Debian-related artwork and themes, .desktop files containing links to
+ Debian related material (suitable for placement on a user's desktop),
+ and other common files between the available desktop environments
+ such as GNOME and KDE.

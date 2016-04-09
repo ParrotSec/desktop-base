@@ -1,0 +1,209 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package desktop-base
+dpkg-buildpackage: source version 8.0.2+parrot6
+dpkg-buildpackage: source distribution testing
+dpkg-buildpackage: source changed by Lorenzo "Palinuro" Faletra <palinuro@frozenbox.org>
+ dpkg-source --before-build desktop-base-8.0.3-parrot6
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+test -x debian/rules
+rm -f debian/stamp-makefile-build debian/stamp-makefile-install
+/usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wall" CXXFLAGS="-g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wall" CPPFLAGS="-Wdate-time -D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  -k clean
+make[1]: ingresso nella directory "/home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6"
+make[1]: Nessuna operazione da eseguire per "clean".
+make[1]: uscita dalla directory "/home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6"
+dh_clean 
+ dpkg-source -b desktop-base-8.0.3-parrot6
+dpkg-source: info: using source format '3.0 (native)'
+dpkg-source: info: building desktop-base in desktop-base_8.0.2+parrot6.tar.xz
+dpkg-source: info: building desktop-base in desktop-base_8.0.2+parrot6.dsc
+ debian/rules build
+test -x debian/rules
+mkdir -p "."
+/usr/share/cdbs/1/rules/buildcore.mk:110: CDBS WARNING:    DEB_DH_BUILDDEB_ARGS is deprecated since 0.4.85
+/usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wall" CXXFLAGS="-g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wall" CPPFLAGS="-Wdate-time -D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  
+make[1]: ingresso nella directory "/home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6"
+make[1]: Nessuna operazione da eseguire per "all".
+make[1]: uscita dalla directory "/home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6"
+touch debian/stamp-makefile-build
+DEB_MAKE_CHECK_TARGET unset, not running checks
+ fakeroot debian/rules binary
+test -x debian/rules
+dh_testroot
+dh_prep 
+dh_installdirs -A 
+mkdir -p "."
+/usr/share/cdbs/1/rules/buildcore.mk:110: CDBS WARNING:    DEB_DH_BUILDDEB_ARGS is deprecated since 0.4.85
+DEB_MAKE_CHECK_TARGET unset, not running checks
+/usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wall" CXXFLAGS="-g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wall" CPPFLAGS="-Wdate-time -D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  install DESTDIR=/home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base/
+make[1]: ingresso nella directory "/home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6"
+# background files
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/images/desktop-base
+install -m 0644 backgrounds/parrot-lockscreen_1600x1200.png backgrounds/parrot-wallpaper_1024x768.png backgrounds/moreblue-orbit-wallpaper.png backgrounds/parrot-wallpaper_1600x1200.png backgrounds/parrot-lockscreen_1280x1024.png backgrounds/parrot-wallpaper_1920x1200.png backgrounds/moreblue-orbit-wallpaper-widescreen.png backgrounds/parrot-lockscreen_1920x1080.png backgrounds/parrot-wallpaper_1280x1024.png backgrounds/parrot-lockscreen_1920x1200.png backgrounds/parrot-lockscreen_2560x1080.png backgrounds/parrot-wallpaper_1920x1080.png backgrounds/moreblue-orbit-grub.png backgrounds/parrot-wallpaper_2560x1440.png backgrounds/parrot-wallpaper_1280x800.png backgrounds/joy-wallpaper_1920x1080.svg backgrounds/lines-wallpaper_1280x1024.svg backgrounds/joy-wallpaper_1280x1024.svg backgrounds/lines-lockscreen_2560x1080.svg backgrounds/lines-wallpaper_1920x1080.svg backgrounds/lines-lockscreen_1600x1200.svg backgrounds/moreblue-orbit-wallpaper-widescreen.svg backgrounds/joy-wallpaper_1600x1200.svg backgrounds/spacefun-wallpaper-widescreen.svg backgrounds/lines-wallpaper_2560x1080.svg backgrounds/joy-wallpaper_1920x1200.svg backgrounds/lines-lockscreen_1920x1200.svg backgrounds/lines-wallpaper_1600x1200.svg backgrounds/joy-inksplat-wallpaper_1920x1080.svg backgrounds/lines-lockscreen_1280x1024.svg backgrounds/lines-wallpaper_1920x1200.svg backgrounds/moreblue-orbit-wallpaper.svg backgrounds/spacefun-wallpaper.svg backgrounds/lines-lockscreen_1920x1080.svg backgrounds/joy.xml backgrounds/parrot-lockscreen.xml backgrounds/lines.xml backgrounds/lines-lockscreen.xml backgrounds/parrot.xml /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/images/desktop-base
+cd /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/images/desktop-base && ln -s desktop-background default
+# splash files
+install -m 0644 splash/moreblue-orbit-splash.png splash/spacefun-splash.svg /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/images/desktop-base
+# emblems
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/icons/hicolor/36x36/emblems
+install -m 0644 icons/36x36/emblems/emblem-debian.png icons/36x36/emblems/emblem-debian.icon /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/icons/hicolor/36x36/emblems
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/icons/hicolor/64x64/emblems
+install -m 0644 icons/64x64/emblems/emblem-debian.png icons/64x64/emblems/emblem-debian.icon /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/icons/hicolor/64x64/emblems
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/icons/hicolor/128x128/emblems
+install -m 0644 icons/128x128/emblems/emblem-debian.png icons/128x128/emblems/emblem-debian.icon /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/icons/hicolor/128x128/emblems
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/icons/hicolor/scalable/emblems
+install -m 0644 icons/scalable/emblems/emblem-debian.icon icons/scalable/emblems/emblem-debian.svg /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/icons/hicolor/scalable/emblems
+# desktop files
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/desktop-base
+install -m 0644 debian-homepage.desktop debian-security.desktop debian-reference.desktop /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/desktop-base/
+install -m 0644 gdm3/login/parrot-logo.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/desktop-base/
+# pixmaps files
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/pixmaps
+install -m 0644 pixmaps/debian-security.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/pixmaps/
+# KDE Config
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/desktop-base/profiles/kde-profile/share/config
+install -m 0644 profiles/kde-profile/share/config/ksplashrc /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/desktop-base/profiles/kde-profile/share/config
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/config
+install -m 0644 profiles/kde-profile/kdeglobals /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/config
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/plasma-desktop/init/
+install -m 0644 kde-wallpaper/10-desktop-base.js /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/plasma-desktop/init/
+# KDE Wallpaper
+## Joy
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy
+install -m 0644 kde-wallpaper/joy/metadata.desktop /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy/
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy/contents
+install -m 0644 kde-wallpaper/joy/contents/screenshot.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy/contents/
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy/contents/images
+install -m 0644 kde-wallpaper/joy/contents/images/1280x800.png kde-wallpaper/joy/contents/images/1024x768.png kde-wallpaper/joy/contents/images/1600x1200.png kde-wallpaper/joy/contents/images/1920x1200.png kde-wallpaper/joy/contents/images/1366x768.png kde-wallpaper/joy/contents/images/1280x1024.png kde-wallpaper/joy/contents/images/1920x1080.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy/contents/images/
+# Inksplat Version
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy_inksplat
+install -m 0644 kde-wallpaper/joy_inksplat/metadata.desktop /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy_inksplat/
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy_inksplat/contents
+install -m 0644 kde-wallpaper/joy_inksplat/contents/screenshot.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy_inksplat/contents/
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy_inksplat/contents/images
+install -m 0644 kde-wallpaper/joy_inksplat/contents/images/1280x800.png kde-wallpaper/joy_inksplat/contents/images/1024x768.png kde-wallpaper/joy_inksplat/contents/images/1600x1200.png kde-wallpaper/joy_inksplat/contents/images/1920x1200.png kde-wallpaper/joy_inksplat/contents/images/1366x768.png kde-wallpaper/joy_inksplat/contents/images/1280x1024.png kde-wallpaper/joy_inksplat/contents/images/1920x1080.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/joy_inksplat/contents/images/
+# Parrot version
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/parrot
+install -m 0644 kde-wallpaper/parrot/metadata.desktop /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/parrot/
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/parrot/contents
+install -m 0644 kde-wallpaper/parrot/contents/screenshot.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/parrot/contents/
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/parrot/contents/images
+install -m 0644 kde-wallpaper/parrot/contents/images/1280x800.png kde-wallpaper/parrot/contents/images/1024x768.png kde-wallpaper/parrot/contents/images/1600x1200.png kde-wallpaper/parrot/contents/images/1920x1200.png kde-wallpaper/parrot/contents/images/2560x1440.png kde-wallpaper/parrot/contents/images/1280x1024.png kde-wallpaper/parrot/contents/images/1920x1080.png kde-wallpaper/parrot/contents/images/1440x900.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/parrot/contents/images/
+## Lines
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/Lines
+install -m 0644 kde-wallpaper/Lines/metadata.desktop /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/Lines/
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/Lines/contents
+install -m 0644 kde-wallpaper/Lines/contents/screenshot.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/Lines/contents/
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/Lines/contents/images
+install -m 0644 kde-wallpaper/Lines/contents/images/1024x768.png kde-wallpaper/Lines/contents/images/1600x1200.png kde-wallpaper/Lines/contents/images/1920x1200.png kde-wallpaper/Lines/contents/images/2560x1080.png kde-wallpaper/Lines/contents/images/1280x1024.png kde-wallpaper/Lines/contents/images/1920x1080.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/wallpapers/Lines/contents/images/
+# KDM theme
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//etc/default/kdm.d
+install -m 0644 kdm-theme/kdm.d/10_desktop-base /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//etc/default/kdm.d
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/kdm/themes/joy
+install -m 0644 kdm-theme/joy/user_icon.png kdm-theme/joy/joy.xml kdm-theme/joy/lineedit_normal.png kdm-theme/joy/KdmGreeterTheme.desktop kdm-theme/joy/session_normal.png kdm-theme/joy/lineedit_active.png kdm-theme/joy/background.svg kdm-theme/joy/screenshot.png kdm-theme/joy/system_normal.png kdm-theme/joy/rectangle.png kdm-theme/joy/lock.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/kdm/themes/joy
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/kdm/themes/parrot
+install -m 0644 kdm-theme/parrot/user_icon.png kdm-theme/parrot/lineedit_normal.png kdm-theme/parrot/KdmGreeterTheme.desktop kdm-theme/parrot/session_normal.png kdm-theme/parrot/lineedit_active.png kdm-theme/parrot/background.png kdm-theme/parrot/screenshot.png kdm-theme/parrot/system_normal.png kdm-theme/parrot/rectangle.png kdm-theme/parrot/lock.png kdm-theme/parrot/parrot.xml /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/kdm/themes/parrot
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/kdm/themes/lines
+install -m 0644 kdm-theme/lines/user_icon.png kdm-theme/lines/lineedit_normal.png kdm-theme/lines/KdmGreeterTheme.desktop kdm-theme/lines/lines.xml kdm-theme/lines/session_normal.png kdm-theme/lines/lineedit_active.png kdm-theme/lines/login_logo_cropped.svg kdm-theme/lines/background.svg kdm-theme/lines/screenshot.png kdm-theme/lines/system_normal.png kdm-theme/lines/login.svg kdm-theme/lines/rectangle.png kdm-theme/lines/lock.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/kdm/themes/lines
+# KSPLASH themes
+## Joy
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy
+install -m 0644 ksplash-theme/joy/Preview.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy
+install -m 0644 ksplash-theme/joy/Theme.rc /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1024x768
+install -m 0644 ksplash-theme/joy/1024x768/background.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1024x768
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1280x800
+install -m 0644 ksplash-theme/joy/1280x800/background.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1280x800
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1280x1024
+install -m 0644 ksplash-theme/joy/1280x1024/background.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1280x1024
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1366x768
+install -m 0644 ksplash-theme/joy/1366x768/background.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1366x768
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1600x1200
+install -m 0644 ksplash-theme/joy/1600x1200/icon4_anim.png ksplash-theme/joy/1600x1200/icon1_anim.png ksplash-theme/joy/1600x1200/icon2.png ksplash-theme/joy/1600x1200/icon5_anim.png ksplash-theme/joy/1600x1200/icon2_anim.png ksplash-theme/joy/1600x1200/icon3.png ksplash-theme/joy/1600x1200/background.png ksplash-theme/joy/1600x1200/icon4.png ksplash-theme/joy/1600x1200/icon1.png ksplash-theme/joy/1600x1200/icon5.png ksplash-theme/joy/1600x1200/rectangle.png ksplash-theme/joy/1600x1200/icon3_anim.png ksplash-theme/joy/1600x1200/description.txt /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1600x1200
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1920x1080
+install -m 0644 ksplash-theme/joy/1920x1080/background.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1920x1080
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1920x1200
+install -m 0644 ksplash-theme/joy/1920x1200/background.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/joy/1920x1200
+## parrot	
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/parrot
+cp -a ksplash-theme/parrot/* /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/parrot/
+## Lines
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/lines/images
+install -m 0644 ksplash-theme/lines/FadeIn.qml ksplash-theme/lines/main.qml /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/lines
+install -m 0644 ksplash-theme/lines/Preview.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/lines
+install -m 0644 ksplash-theme/lines/Theme.rc /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/lines
+install -m 0644 ksplash-theme/lines/images/background_logo_cropped.svg ksplash-theme/lines/images/icon2.png ksplash-theme/lines/images/icon3.png ksplash-theme/lines/images/background.svg ksplash-theme/lines/images/icon4.png ksplash-theme/lines/images/icon1.png ksplash-theme/lines/images/icon5.png ksplash-theme/lines/images/rectangle.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/kde4/apps/ksplash/Themes/lines/images
+# Xfce 4.6
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/desktop-base/profiles/xdg-config/xfce4/xfconf/xfce-perchannel-xml
+install -m 0644 profiles/xdg-config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml profiles/xdg-config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/desktop-base/profiles/xdg-config/xfce4/xfconf/xfce-perchannel-xml
+# GNOME background descriptor
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/gnome-background-properties
+install -m 0644 gnome-backgrounds.xml /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/gnome-background-properties/debian.xml
+# GDM 3 theme
+mkdir -p /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/gdm/dconf
+install -m 0644 gdm3/background.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/images/desktop-base/login-background.png
+install -m 0644 gdm3/10-desktop-base-settings /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/gdm/dconf/
+# grub
+install -m 0644 grub/lines-grub.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/images/desktop-base/
+install -m 0644 grub/lines-grub-1920x1080.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/images/desktop-base/
+install -m 0644 grub/joy-grub.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/images/desktop-base/
+install -m 0644 grub/spacefun-grub.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/images/desktop-base/
+install -m 0644 grub/spacefun-grub-widescreen.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/images/desktop-base/
+install -m 0644 grub/grub_background.sh /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/desktop-base/
+install -m 0644 grub/parrot-grub.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/images/desktop-base/
+# plymouth
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/plymouth/themes/spacefun
+install -m 0644 plymouth/spacefun/planet.png plymouth/spacefun/rocket0.png plymouth/spacefun/star-red.png plymouth/spacefun/star-fuzzy-small.png plymouth/spacefun/lock.png plymouth/spacefun/earth0.png plymouth/spacefun/star-white-small.png plymouth/spacefun/rocket3.png plymouth/spacefun/bullet.png plymouth/spacefun/earth1.png plymouth/spacefun/entry.png plymouth/spacefun/earth3.png plymouth/spacefun/star-white.png plymouth/spacefun/background.png plymouth/spacefun/star-red-small.png plymouth/spacefun/star-fuzzy.png plymouth/spacefun/spacefun.script plymouth/spacefun/rocket1.png plymouth/spacefun/earth2.png plymouth/spacefun/box.png plymouth/spacefun/logo.png plymouth/spacefun/swirlaxy.png plymouth/spacefun/rocket2.png plymouth/spacefun/earth4.png plymouth/spacefun/spacefun.plymouth /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/plymouth/themes/spacefun
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/plymouth/themes/joy
+install -m 0644 plymouth/joy/debian_logo.png plymouth/joy/password_dot16.png plymouth/joy/joy.script plymouth/joy/progress_dot_on16.png plymouth/joy/progress_dot_on.png plymouth/joy/password_field16.png plymouth/joy/joy.plymouth plymouth/joy/password_field.png plymouth/joy/background.png plymouth/joy/password_dot.png plymouth/joy/progress_dot_off16.png plymouth/joy/debian_logo16.png plymouth/joy/progress_dot_off.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/plymouth/themes/joy
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/plymouth/themes/parrot
+install -m 0644 plymouth/parrot/debian_logo.png plymouth/parrot/password_dot16.png plymouth/parrot/progress_dot_on16.png plymouth/parrot/parrot.plymouth plymouth/parrot/progress_dot_on.png plymouth/parrot/password_field16.png plymouth/parrot/password_field.png plymouth/parrot/background.png plymouth/parrot/password_dot.png plymouth/parrot/progress_dot_off16.png plymouth/parrot/debian_logo16.png plymouth/parrot/progress_dot_off.png plymouth/parrot/parrot.script /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/plymouth/themes/parrot
+install -d /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/plymouth/themes/lines
+install -m 0644 plymouth/lines/debian8.png plymouth/lines/password_dot16.png plymouth/lines/lines.script plymouth/lines/background.png plymouth/lines/password_dot.png plymouth/lines/electron.png plymouth/lines/lines.plymouth plymouth/lines/password_field16.png plymouth/lines/logo.png plymouth/lines/password_field.png /home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6/debian/desktop-base//usr/share/plymouth/themes/lines
+make[1]: uscita dalla directory "/home/eclipse/Desktop/repo-new/desktop-base-8.0.3-parrot6"
+touch debian/stamp-makefile-install
+Adding cdbs dependencies to debian/desktop-base.substvars
+dh_installdirs -pdesktop-base 
+dh_installdocs -pdesktop-base 
+dh_installexamples -pdesktop-base 
+dh_installman -pdesktop-base  
+dh_installinfo -pdesktop-base  
+dh_installmenu -pdesktop-base 
+dh_installcron -pdesktop-base 
+dh_installinit -pdesktop-base  
+dh_installdebconf -pdesktop-base 
+dh_installemacsen -pdesktop-base   
+dh_installcatalogs -pdesktop-base 
+dh_installpam -pdesktop-base 
+dh_installlogrotate -pdesktop-base 
+dh_installlogcheck -pdesktop-base 
+dh_installchangelogs -pdesktop-base  
+dh_installudev -pdesktop-base 
+dh_lintian -pdesktop-base 
+dh_bugfiles -pdesktop-base 
+dh_install -pdesktop-base  
+dh_link -pdesktop-base  
+dh_installmime -pdesktop-base 
+dh_installgsettings -pdesktop-base 
+dh_strip -pdesktop-base  
+dh_compress -pdesktop-base  
+dh_fixperms -pdesktop-base  
+dh_makeshlibs -pdesktop-base  
+dh_gconf --priority=15
+dh_installdeb -pdesktop-base 
+dh_perl -pdesktop-base 
+dh_shlibdeps -pdesktop-base    
+dh_gencontrol -pdesktop-base  
+dpkg-gencontrol: warning: package desktop-base: unused substitution variable ${misc:Depends}
+dh_md5sums -pdesktop-base 
+dh_builddeb -pdesktop-base -- -Zxz
+dpkg-deb: generazione del pacchetto "desktop-base" in "../desktop-base_8.0.2+parrot6_all.deb".
+ dpkg-genchanges  >../desktop-base_8.0.2+parrot6_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build desktop-base-8.0.3-parrot6
+dpkg-buildpackage: full upload; Debian-native package (full source is included)
+Now running lintian...
+W: desktop-base source: maintainer-also-in-uploaders
+W: desktop-base source: out-of-date-standards-version 3.9.6 (current is 3.9.7)
+W: desktop-base: command-with-path-in-maintainer-script postinst:105 /usr/sbin/update-initramfs
+N: 1 tag overridden (1 warning)
+Finished running lintian.
