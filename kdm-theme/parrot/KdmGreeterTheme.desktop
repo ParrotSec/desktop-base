@@ -1,8 +1,0 @@
-[KdmGreeterTheme]
-Encoding=UTF-8
-Greeter=parrot.xml
-Name=Parrot
-Description=Parrot KDM Theme
-Author=Lorenzo Faletra
-Copyright=(c) 2016 Lorenzo Faletra <palinuro@frozenbox.org>
-Screenshot=screenshot.png

@@ -43,11 +43,22 @@ Copyright Ulrich Hansen <uhansen@mainz-online.de>, Mainz, Germany, 2010,
 published under GPL2 or higher (at your option)
 They are based on the Debian “Open Use” Logo (without the “Debian” label).
 
-The .desktop  files included  in this package  were compiled  by Colin
-Walters <walters@debian.org>.
+The .desktop files and xml configuration files in this package were compiled by
+desktop-base contributors.
 
-icons/*/emblems/emblem-debian.{png,svg} are different versions of the Debian
+emblems-debian/emblem-debian*.svg are different versions of the Debian
 “Open Use” Logo (without the “Debian” label).
+
+The SDDM QML script is © 2016 David Edmundson and adapted for Debian by
+Aurélien Couderc.
+
+
+The Soft Waves theme is © 2016 Juliette Taka Belin and released under the GPLv2
+or any later version.
+
+The Lines plymouth script is Copyright © 2009 Canonical Ltd.,
+Copyright © 2010-2016 Aurélien Couderc, Copyright © 2014-2016 Juliette Taka
+Belin under the GPLv2 or any later version.
 
 The Lines theme is © 2014 Juliette Taka Belin and released under the GPLv2 or
 any later version.
@@ -100,11 +111,6 @@ label).
 The Spacefun plymouth script is © 2010 Aurelien Couderc and released under the
 GPLv2 or any later version, using artwork from Valessio S. Brito under the
 GPLv2.
-
-Moreblue Orbit theme (moreblue-orbit-splash, moreblue-orbit-grub and
-moreblue-orbit-wallpaper) is © 2008 Andre Ferreira and released under the
-GPLv2. It is based on the Debian “Open Use” Logo (without the “Debian” label).
-The GDM theme authors are Andre Ferreira, Fathi Boudra and Valessio S. Brito.
 
 The GPL license (version 2) can be found in plain text format, on Debian
 systems, at /usr/share/common-licenses/GPL-2

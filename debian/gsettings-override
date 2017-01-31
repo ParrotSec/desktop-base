@@ -4,4 +4,4 @@ picture-uri='file:///usr/share/images/desktop-base/desktop-background.xml'
 
 [org.gnome.desktop.screensaver]
 picture-options='zoom'
-picture-uri='file:///usr/share/images/desktop-base/lines-lockscreen.xml'
+picture-uri='file:///usr/share/images/desktop-base/desktop-lockscreen.xml'

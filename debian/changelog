@@ -1,3 +1,99 @@
+desktop-base (9.0.2+parrot0) testing; urgency=medium
+
+  * Import new Debian release
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Wed, 01 Feb 2017 00:59:07 +0100
+
+desktop-base (9.0.2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Include size 3840x2160 (4k) wallpaper and lockscreen. (Closes: #851930)
+  * Include more sizes of emblem-debian, add emblem-debian-white.
+    (Closes: #833529)
+  * Lockscreen/Joy: fix wallpaper image being used instead of lockscreen.
+
+ -- Aurélien COUDERC <zecoucou@free.fr>  Tue, 24 Jan 2017 23:32:47 +0100
+
+desktop-base (9.0.1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * postinst: Report success even when update-grub fails, this is needed
+    for installation to work inside live systems. (Closes: #850601)
+  * Plymouth/{softWaves,Lines,Joy}: provide fsckd progress support. Thanks to
+    Ubuntu and Didier Roche for doing the work and providing timely info.
+    (Closes: #850181)
+  * Plymouth/softWaves: various visual tweaks, boost logo glow, improvements
+    in password input rendering. Thanks Juliette!
+  * Plymouth/Lines: ensure password field doesn’t bump into the Debian image
+    even for smaller height screens. (Closes: #774226)
+  * Plymouth/Lines: Remove 8 from Debian8 assets.
+
+ -- Aurélien COUDERC <zecoucou@free.fr>  Sun, 15 Jan 2017 11:25:27 +0100
+
+desktop-base (9.0.0) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Implement Plymouth splash for Stretch’s soft Waves theme.
+    (Closes: #843998, #842078)
+  * Prepare for plymouth splash integration into theme packs that will allow
+    splash selection via alternatives in the future.
+  * Fix postinst broken in 9.0.0~exp2 on install (and not upgrade) of the
+    package.
+  * Added myself to the uploaders.
+
+ -- Aurélien COUDERC <zecoucou@free.fr>  Mon, 02 Jan 2017 15:56:32 +0100
+
+desktop-base (9.0.0~exp2) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Fix detection of update-initramfs. (Closes: #843727)
+  * Include GRUB text/background colors in the theme pack / alternatives
+    system. (Closes: #606383)
+
+  * Additional wallpaper and lockscreen ratios for Soft Waves theme.
+  * Remove Moreblue theme from Lenny.
+  * Add theme pack support Joy/Spacefun themes.
+
+  * Use dash instead of bash for postinst
+  * Generate all GRUB bitmaps from SVG at build time instead of versioning
+    them.
+  * Stop shipping SDDM breeze-based theme, now in plasma-workspace.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 19 Dec 2016 14:51:42 +0100
+
+desktop-base (9.0.0~exp1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Initial support for Soft Waves theme by Juliette Belin.
+    - Default theme for GRUB (Closes: #598776, #773369)
+    - Default theme for Gnome wallpaper and lock screen
+    - Default theme for Plasma 5 wallpaper (Closes: #831730)
+    - Theme available for SDDM login and lock screen
+    - debian/copyright updated
+  * Initial support for global theme switching via alternatives
+
+  * Remove references to long gone KDE3 globals in maintainer scripts.
+    (Closes: #659549)
+  * README.Debian: inform about updating initrds too. (Closes: #612163)
+  * Document use of sync use before grub update in postinst. (Closes: #611364)
+  * Add SDDM theming for KDE/Plasma 5:
+    - Based on default SDDM theme breeze + Debian theme background.
+    - Can be configured with alternatives (also works in lightdm).
+   (Closes: #415064, #608523, #611170, #670866, #762276)
+  * Remove deprecated ksplash and kdm from KDE4. (Closes: #607842)
+  * Remove deprecated splash options from Gnome 2.
+  * Some cleanup in maintainer scripts to correctly handle alternatives.
+    (Closes: #773404)
+
+  * Fix lintian warning command-with-path-in-maintainer-script in
+    postinst script.
+  * Bump Standards-Version to 3.9.8 (no changes needed).
+
+  [ Yves-Alexis Perez ]
+  * Also use Debian wallpaper for second monitor on Xfce.       closes: #785371
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 07 Nov 2016 21:32:30 +0100
+
 desktop-base (8.0.2+parrot6) testing; urgency=high
 
   * Debianized sources
@@ -59,7 +155,7 @@ desktop-base (8.0.0~exp1) experimental; urgency=low
 
   [ Yves-Alexis Perez ]
   * Initial support for Lines theme by Juliette Belin.
-    - add the various ratio SVG wallpapers to backgrounds/ 
+    - add the various ratio SVG wallpapers to backgrounds/
     - debian/{postinst,prerm}: update alternatives priority to make Lines the
       automatic/default one
     - gdm3/background.svg updated to use Lines login screen
@@ -178,9 +274,9 @@ desktop-base (6.0.7) unstable; urgency=low
 
   [ Josselin Mouette ]
   * Build-depend on recent cdbs+debhelper to have dh_installgsettings.
-  * debian/gsettings-override: set the default background using 
+  * debian/gsettings-override: set the default background using
     GSettings.
-  * xy_desktop-base.gschema.override: configure the default background 
+  * xy_desktop-base.gschema.override: configure the default background
     for gdm3 using GSettings as well.
   * All of this closes: #623094.
   * Add myself to uploaders.
@@ -235,7 +331,7 @@ desktop-base (6.0.3) unstable; urgency=low
     - don't set image-style property, default to auto.          closes: #523150
   * cleanup debian/copyright for removed stuff.                 closes: #594533
   * debian/pixmaps:
-    - debian-security updated, thanks to Ulrich Hansen.         closes: #389155 
+    - debian-security updated, thanks to Ulrich Hansen.         closes: #389155
   * DFSG-ify artwork:                                           closes: #587668
     - various themes, thanks to Ulrich Hansen.
     - SpaceFun theme, thanks to Valessio Brito.
@@ -307,10 +403,10 @@ desktop-base (6.0.0) unstable; urgency=low
       written to disk.
   * debian/prerm:
     - rename grub alternative to add png extension.
-  * Makefile: 
+  * Makefile:
     - drop unused rules for KDE3 and Xfce 4.4.
     - add SpaceFun gdm3 theme.
-    - add SpaceFun kdm theme. 
+    - add SpaceFun kdm theme.
     - install grub theme and script.
   * {ksplash,kdm}-theme/moreblue-orbit{-default}:
     - drop “Debian” word from image to only use DFSG-free logo. closes: #587668
@@ -352,7 +448,7 @@ desktop-base (5.0.3) unstable; urgency=medium
   * debian/preinst:
     - handle upgrade in various cases: (/etc/splashy/themes symlink or not,
       and changed or unchanged themes files)
-  * debian/README.Debian: 
+  * debian/README.Debian:
     - announce the change.
     - tell user how to enable MoreBlue orbit theme if splashy is installed
       after desktop-base.

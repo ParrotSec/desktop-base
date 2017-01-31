@@ -1,11 +1,8 @@
-#!/bin/sh -e
+#!/bin/sh
 set -e
 
+# Tag to allow some debhelper commands to inject relevant code
 #DEBHELPER#
-
-if dpkg-maintscript-helper supports rm_conffile 2>/dev/null; then
-  dpkg-maintscript-helper rm_conffile /etc/kde3/kdeglobals 6.0.1 -- "$@"
-fi
 
 if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
     if which update-grub2 > /dev/null ; then

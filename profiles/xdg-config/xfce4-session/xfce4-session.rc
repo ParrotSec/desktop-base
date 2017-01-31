@@ -2,7 +2,7 @@
 Engine=simple
 
 [General]
-SessionName=xfce
+SessionName=Default
 SaveOnExit=true
 
 # This the default session launched by xfce4-session if the

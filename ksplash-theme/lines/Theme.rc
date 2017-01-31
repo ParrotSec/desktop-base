@@ -1,7 +1,0 @@
-[KSplash Theme: lines]
-Name = Lines Splash Screen
-Description = Default splash screen for Debian 8.0 Jessie
-Version = 1.0
-Author = Juliette Taka BELIN <juliette.belin@free.fr>, Aurélien COUDERC <zecoucou@free.fr>, Martin Klapetek <mklapetek(at)kde.org>
-Homepage = http://www.kde.org
-Engine = KSplashQML
