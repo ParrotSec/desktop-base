@@ -1,3 +1,9 @@
+desktop-base (9.0.2+parrot1) testing; urgency=medium
+
+  * fix 1920x1080.svg background link
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Thu, 02 Feb 2017 19:31:29 +0100
+
 desktop-base (9.0.2+parrot0) testing; urgency=medium
 
   * Import new Debian release
