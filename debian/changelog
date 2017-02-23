@@ -1,3 +1,9 @@
+desktop-base (9.0.2+parrot2) testing; urgency=medium
+
+  * Change GRUB text colors
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Thu, 23 Feb 2017 23:23:28 +0100
+
 desktop-base (9.0.2+parrot1) testing; urgency=medium
 
   * fix 1920x1080.svg background link
