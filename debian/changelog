@@ -1,3 +1,9 @@
+desktop-base (9.0.3+parrot3) testing; urgency=medium
+
+  * Remove debian themes to save space.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Thu, 29 Jun 2017 16:57:11 +0200
+
 desktop-base (9.0.2+parrot2) testing; urgency=medium
 
   * Change GRUB text colors
