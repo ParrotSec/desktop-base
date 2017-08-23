@@ -1,3 +1,9 @@
+desktop-base (9.0.5+parrot0) testing; urgency=medium
+
+  * Increment version to replace new debian version.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Thu, 24 Aug 2017 01:04:14 +0200
+
 desktop-base (9.0.3+parrot4) testing; urgency=medium
 
   * Fix postinst and postrm.
