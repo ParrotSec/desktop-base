@@ -1,0 +1,22 @@
+#!/bin/bash
+
+dir_name=$(dirname $0)
+. ${dir_name}/xmllint-functions
+
+XML_FILE_PATTERN="*.svg"
+XML_LINT_SUMMARY="svgs-xmllint-summary.csv"
+if [[ -n ${AUTOPKGTEST_ARTIFACTS} ]] ; then
+    XML_LINT_SUMMARY="${AUTOPKGTEST_ARTIFACTS}/${XML_LINT_SUMMARY}"
+fi
+
+
+xml_lint_command="lint_xmls ${XML_FILE_PATTERN} ${XML_LINT_SUMMARY}"
+echo "$0: running '${xml_lint_command}'..."
+${xml_lint_command}
+xml_lint_result=$?
+
+echo "$0: '${xml_lint_command}' returned ${xml_lint_result}"
+
+
+exit ${xml_lint_result}
+

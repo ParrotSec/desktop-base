@@ -1,26 +1,37 @@
 GRUB_THEMES=parrot-theme/grub
 DEFAULT_BACKGROUND=desktop-background
+VENDOR_LOGOS=debian-logos
 
 PIXMAPS=$(wildcard pixmaps/*.png)
 DESKTOPFILES=$(wildcard *.desktop)
 
-all: build-grub build-emblems
+.PHONY: all clean install install-local
+all: build-grub build-emblems build-logos
+clean: clean-grub clean-emblems clean-logos
 
+.PHONY: build-grub clean-grub install-grub
 build-grub clean-grub install-grub:
 	@target=`echo $@ | sed s/-grub//`; \
 	for grub_theme in $(GRUB_THEMES) ; do \
 		if [ -f $$grub_theme/Makefile ] ; then \
 			$(MAKE) $$target -C $$grub_theme || exit 1; \
 		fi \
-	done$
+	done
 
+.PHONY: build-emblems clean-emblems install-emblems
 build-emblems clean-emblems install-emblems:
 	@target=`echo $@ | sed s/-emblems//`; \
 	$(MAKE) $$target -C emblems-debian || exit 1;
 
-clean: clean-grub clean-emblems
+.PHONY: build-logos clean-logos install-logos
+build-logos clean-logos install-logos:
+	@target=`echo $@ | sed s/-logos//`; \
+	for vendor_logos in $(VENDOR_LOGOS); do \
+		$(MAKE) $$target -C $$vendor_logos || exit 1; \
+	done
 
-install: install-grub install-emblems install-local
+
+install: install-grub install-emblems install-logos install-local
 
 install-local:
 	# background files
@@ -28,24 +39,29 @@ install-local:
 	cd $(DESTDIR)/usr/share/images/desktop-base && ln -s $(DEFAULT_BACKGROUND) default
 	# desktop files
 	mkdir -p $(DESTDIR)/usr/share/desktop-base
-	$(INSTALL) $(DESKTOPFILES) $(DESTDIR)/usr/share/desktop-base/
+	$(INSTALL_DATA) $(DESKTOPFILES) $(DESTDIR)/usr/share/desktop-base/
 	# pixmaps files
 	mkdir -p $(DESTDIR)/usr/share/pixmaps
-	$(INSTALL) $(PIXMAPS) $(DESTDIR)/usr/share/pixmaps/
+	$(INSTALL_DATA) $(PIXMAPS) $(DESTDIR)/usr/share/pixmaps/
 
+	# Create a 'debian-theme' symlink in plymouth themes folder, pointing at the
+	# plymouth theme for the currently active 'desktop-theme' alternative.
+	mkdir -p $(DESTDIR)/usr/share/plymouth/themes
+	ln -s ../../desktop-base/active-theme/plymouth $(DESTDIR)/usr/share/plymouth/themes/debian-theme
 
 	# Set Plasma 5/KDE default wallpaper
 	install -d $(DESTDIR)/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates
-	$(INSTALL) defaults/plasma5/desktop-base.js $(DESTDIR)/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/
+	$(INSTALL_DATA) defaults/plasma5/desktop-base.js $(DESTDIR)/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/
 
 	# Xfce 4.6
 	mkdir -p $(DESTDIR)/usr/share/desktop-base/profiles/xdg-config/xfce4/xfconf/xfce-perchannel-xml
-	$(INSTALL) $(wildcard profiles/xdg-config/xfce4/xfconf/xfce-perchannel-xml/*) $(DESTDIR)/usr/share/desktop-base/profiles/xdg-config/xfce4/xfconf/xfce-perchannel-xml
+	$(INSTALL_DATA) $(wildcard profiles/xdg-config/xfce4/xfconf/xfce-perchannel-xml/*) $(DESTDIR)/usr/share/desktop-base/profiles/xdg-config/xfce4/xfconf/xfce-perchannel-xml
 
 	# GNOME background descriptors
 	mkdir -p $(DESTDIR)/usr/share/gnome-background-properties
 
-	# parrot theme
+
+	# Parrot theme
 	### Plymouth theme
 	install -d $(DESTDIR)/usr/share/plymouth/themes/parrot
 	$(INSTALL) $(wildcard parrot-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/parrot
@@ -74,6 +90,5 @@ install-local:
 	# Lock screen symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
 	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/parrot-theme/lockscreen parrotLockScreen
-
 
 include Makefile.inc

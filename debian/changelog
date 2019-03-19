@@ -1,3 +1,62 @@
+desktop-base (10.0.0+parrot1) testing; urgency=medium
+
+  * Import new Debian release.
+  * Update Parrot theme.
+  * Remove Debian themes.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Tue, 19 Mar 2019 18:42:40 +0100
+
+desktop-base (10.0.0) unstable; urgency=medium
+
+  * Add Buster’s default theme futurePrototype by Alex Makas.
+  * Add alternate Buster theme moonlight by Juliette Taka Belin.
+  * Add vendor (here Debian) logos and icons and the associated alternatives
+    so that derivates can easily replace with their own. (Closes: #898456)
+  * Optimize PNGs to reduce installed size.
+  * Migrate d/copyright to machine-readable format 1.0.
+  * Bump Standards-Version to 4.3.0 (no change required).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 04 Feb 2019 23:58:47 +0100
+
+desktop-base (9.0.7) unstable; urgency=medium
+
+  * Tentative fix for intermittent build failure when doing parallel builds.
+
+ -- Aurélien COUDERC <zecoucou@free.fr>  Mon, 21 May 2018 14:12:48 +0200
+
+desktop-base (9.0.6) unstable; urgency=medium
+
+  * First release with package sources migrated to git and
+    salsa.debian.org!
+    - Updated Vcs-* fields accordingly.
+    - Add gbp.conf configuration for native package tag names.
+    - Add README.contribute for how to contribute with git / salsa.
+
+  * Improve detection of grub efi to choose default background ratio.
+  * Add a debian-theme theme for plymouth themes. This should help switching
+    the plymouth theme with the rest of the global theme.
+  * Try harder detecting if grub is used as bootloader before calling
+    update-grub. (Closes: #851893)
+  * Misspelled identifier gloabl should be global in softwaves.script.
+    (Closes: #898150)
+
+  * Fix FTBFS due to make >= 4.2 being more picky on typos. (Closes: #897549)
+  * Bump debhelper version to 11, fix usage of install in Makefiles in the
+    move.
+  * Drop versioned pre-depends on dpkg for dpkg-maintscript-helper that has
+    been available in dpkg since wheezy.
+  * Use debian-desktop@l.d.o as Maintainer instead of Gustavo Franco; removed
+    Loïc Minier, Fathi Boudra and Eshat Cakar from uploaders. Thanks to all for
+    your past work on the package! (Closes: #879297)
+  * Bump Standards-Version to 4.1.4 (VCS-* fields already moved to secure URIs
+    with the migration to Salsa).
+  * Use Rules-Requires-Root: no
+  * Fix Lintian issues:
+    - unnecessary-testsuite-autopkgtest-header
+    - package-uses-deprecated-source-override-location
+
+ -- Aurélien COUDERC <zecoucou@free.fr>  Mon, 05 Mar 2018 10:20:26 +0100
+
 desktop-base (9.0.5+parrot1) testing; urgency=medium
 
   * Import minor updates from Git merge requests.
