@@ -1,6 +1,6 @@
 [Plymouth Theme]
-Name=parrot
-Description=A theme that features a blank background with a logo.
+Name=Default theme for Parrot OS
+Description=A theme that features the Parrot OS logo in a white spinning circle
 ModuleName=script
 
 [script]

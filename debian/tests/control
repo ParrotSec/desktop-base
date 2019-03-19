@@ -1,0 +1,2 @@
+Tests: validate-xmls-lint, validate-svgs-xmllint
+Depends: libxml2-utils

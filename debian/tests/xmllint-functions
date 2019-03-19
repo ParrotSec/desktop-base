@@ -1,0 +1,48 @@
+#!/bin/bash
+
+lint_xmls() {
+    local xml_file_pattern=$1
+    local xml_lint_summary=$2
+
+    if [ "$#" -ne 2 ] ; then
+        echo "$0: wrong number of arguments."
+        echo "Expected:"
+        echo "    $0 xml_file_pattern summary_file_name"
+        return 255
+    fi
+
+    echo "Running xmllint for pattern '${xml_file_pattern}'"
+    echo "Current directory is '$(pwd)'"
+    echo "Result will be stored in ${xml_lint_summary}"
+    echo
+
+    echo "file,xmllint_status" > ${xml_lint_summary}
+
+    local files_list=$(find . -name "${xml_file_pattern}")
+    local nb_files=$(echo "${files_list}" | wc -l)
+    local nb_ok=0
+    local nb_errors=0
+
+    echo "${nb_files} files will be checked"
+
+    while IFS= read -d $'\n' -r xml_file ; do
+        xmllint --noout ${xml_file}
+        local xmllint_result=$?
+        echo "${xml_file},${xmllint_result}" >> ${xml_lint_summary}
+        if [ ${xmllint_result} -eq 0 ] ; then
+            echo "'${xml_file}' is OK"
+            ((nb_ok++))
+        else
+            echo "'${xml_file}' has errors"
+            ((nb_errors++))
+        fi
+    done <<< "${files_list}"
+
+    echo "Results of xmllint for pattern '${xml_file_pattern}'"
+    echo "    Checked: ${nb_files}"
+    echo "    OK:      ${nb_ok}"
+    echo "    Errors:  ${nb_errors}"
+
+    return ${nb_errors}
+
+}

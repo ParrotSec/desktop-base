@@ -5,49 +5,32 @@ set -e
 #DEBHELPER#
 
 if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
+    # Remove vendor logos alternative, all slaves get removed automatically
+    update-alternatives --remove \
+            vendor-logos \
+            /usr/share/desktop-base/debian-logos
+
+    update-alternatives --remove \
+            vendor-logos \
+            /usr/share/desktop-base/kali-logos
+
     # Remove background alternatives for theme packages
     while read theme filename; do
         update-alternatives --remove \
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename $priority
     done << EOF
-parrot 1024x768.png
-parrot 1600x1200.png
-parrot 1280x1024.png
-parrot 1280x800.png
-parrot 1920x1080.png
-parrot 1920x1200.png
-softwaves 1024x768.svg
-softwaves 1280x720.svg
-softwaves 1280x800.svg
-softwaves 1280x1024.svg
-softwaves 1600x1200.svg
-softwaves 1920x1080.svg
-softwaves 1920x1200.svg
-softwaves 2560x1440.svg
-softwaves 2560x1600.svg
-lines 1280x1024.svg
-lines 1600x1200.svg
-lines 1920x1080.svg
-lines 1920x1200.svg
-lines 2560x1080.svg
-joy 1280x720.svg
-joy 1280x1024.svg
-joy 1600x1200.svg
-joy 1920x1080.svg
-joy 1920x1200.svg
-joy-inksplat 1280x720.svg
-joy-inksplat 1280x1024.svg
-joy-inksplat 1600x1200.svg
-joy-inksplat 1920x1080.svg
-joy-inksplat 1920x1200.svg
-spacefun 1280x720.svg
-spacefun 1280x1024.svg
-spacefun 1920x1080.svg
-spacefun 1920x1200.svg
+parrot 1024x768.png 100
+parrot 1280x1024.png 100
+parrot 1280x800.png 100
+parrot 1440x900.png 100
+parrot 1600x1200.png 100
+parrot 1920x1080.png 100
+parrot 1920x1200.png 100
+parrot 2560x1440.png 100
 EOF
     # *Last* remove background *highest priority* alternatives for active theme
-    update-alternatives --remove desktop-background /usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.svg
+    update-alternatives --remove desktop-background /usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.png
 
     # Remove desktop-background.xml alternatives
     # For theme packages
@@ -57,11 +40,6 @@ EOF
             /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml $priority
     done << EOF
 parrot
-softwaves
-lines
-joy
-joy-inksplat
-spacefun
 EOF
     # *Lastly* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -76,10 +54,6 @@ EOF
             /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml $priority
     done << EOF
 parrot
-softwaves
-lines
-joy
-spacefun
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -94,11 +68,6 @@ EOF
             /usr/share/desktop-base/$theme-theme/wallpaper
     done << EOF
 parrot
-softwaves
-lines
-joy
-joy-inksplat
-spacefun
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -114,11 +83,6 @@ EOF
             /usr/share/desktop-base/$theme-theme/login/$background
     done << EOF
 parrot background.jpg
-softwaves background.svg
-lines background.svg
-lines background-nologo.svg
-joy background.svg
-spacefun background.svg
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -133,10 +97,6 @@ EOF
             /usr/share/desktop-base/$theme-theme/grub/grub_background.sh
     done << EOF
 parrot
-softwaves
-lines
-joy
-spacefun
 EOF
     # Remove background alternatives
     while read theme ratio; do
@@ -149,14 +109,6 @@ EOF
     done << EOF
 parrot 4x3
 parrot 16x9
-softwaves 4x3
-softwaves 16x9
-lines 4x3
-lines 16x9
-joy 4x3
-joy 16x9
-spacefun 4x3
-spacefun 16x9
 EOF
     ## *Lastly* remove *highest priority* alternative
     num_grub_efi_installed=$(dpkg-query --list "grub-efi*" 2> /dev/null | grep "^i" | wc -l)
@@ -185,14 +137,10 @@ EOF
             /usr/share/desktop-base/$theme-theme
     done << EOF
 parrot
-lines
-joy
-joy-inksplat
-spacefun
 EOF
     ## *Lastly* remove *highest priority* alternative
     update-alternatives --remove \
         desktop-theme \
-        /usr/share/desktop-base/softwaves-theme
+        /usr/share/desktop-base/futureprototype-theme
 
 fi

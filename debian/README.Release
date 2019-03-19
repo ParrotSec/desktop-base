@@ -1,0 +1,17 @@
+For occasional contributions, the preferred way to contribute to this
+repository is to create a branch on salsa.debian.org, create a merge request
+and ask for the merge request to be reviewed on
+debian-desktop@lists.debian.org.
+
+For Debian developers and maintainers doing the tag and publication work for
+the package, the preferred workflow is the following.
+
+- During development cycle:
+  -> simply git commit, or accept merge requests
+
+- To prepare a release, as a source-only upload:
+  gbp dch -R --commit
+  gbp buildpackage --git-tag --changes-option=-S
+
+- To prepare d/changelog for the next development cycle:
+  gbp dch -N new_version --commit

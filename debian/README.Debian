@@ -4,6 +4,8 @@ README for desktop-base
 1. What’s provided
    1.1. Themes packs
    1.2. Debian logos
+      1.2.1. Debian logos icons
+      1.2.2. Debian logos images
    1.3. Desktop files
    1.4. Default configurations overrides
    1.5. Plymouth boot splashes
@@ -29,18 +31,74 @@ Four theme packs are currently provided:
 
     These themes contain customization for GRUB, Plymouth, login managers like
 SDDM and LightDM, wallpapers and lock screen for desktop environments like
-Gnome, KDE’s Plasma 5, XFCE, Mate…
+GNOME, KDE’s Plasma 5, Xfce, Mate…
 See below for how to switch between themes and a detailed description of the
 theme packs structure.
 
 1.2. Debian logos
 
-Several sizes of the Debian logo are shipped as:
-    /usr/share/icons/hicolor/${size}x${size}/emblems/emblem-debian.${ext}
-    /usr/share/icons/hicolor/${size}x${size}/emblems/emblem-debian.icon
+Three version of the logo are shipped as icons:
+- emblem-debian         : the Debian logo in it’s original red-purple color
+- emblem-debian-symbolic: the Debian logo in a black+transparent format that
+                          desktop like GNOME can use and adapt the color
+                          depending on the context.
+- emblem-debian-white   : the Debian logo in white
 
-    The sizes currently provided are 36, 64, 128 as PNG, and scalable for the
-SVG version. Each has a side .icon descriptor file.
+We also ship 3 versions of the logo as images:
+- logo             : logo alone
+- logo-text        : logo + "Debian" name
+- logo-text-version: logo + "Debian" name + Debian version number
+
+All these images and logos are provided both in several bitmap resolutions
+(PNG) and also in vector form (SVG).
+
+The "vendor-logos" alternative is shipped with alternatives for both
+logo images and icons.
+It should be used by derivatives to replace by their own logos.
+
+The alternative has the following structure:
+- Main alternative
+    /usr/share/images/vendor-logos -> /etc/alternatives/vendor-logos
+- Secondary alternatives
+    /usr/share/icons/vendor/128x128/emblems:
+        emblem-vendor.png -> /etc/alternatives/emblem-vendor-128
+        emblem-vendor-symbolic.png -> /etc/alternatives/emblem-vendor-symbolic-128
+        emblem-vendor-white.png -> /etc/alternatives/emblem-vendor-white-128
+    /usr/share/icons/vendor/256x256/emblems:
+        emblem-vendor.png -> /etc/alternatives/emblem-vendor-256
+        emblem-vendor-symbolic.png -> /etc/alternatives/emblem-vendor-symbolic-256
+        emblem-vendor-white.png -> /etc/alternatives/emblem-vendor-white-256
+    /usr/share/icons/vendor/64x64/emblems:
+        emblem-vendor.png -> /etc/alternatives/emblem-vendor-64
+        emblem-vendor-symbolic.png -> /etc/alternatives/emblem-vendor-symbolic-64
+        emblem-vendor-white.png -> /etc/alternatives/emblem-vendor-white-64
+    /usr/share/icons/vendor/scalable/emblems:
+        emblem-vendor.svg -> /etc/alternatives/emblem-vendor-scalable
+        emblem-vendor-symbolic.svg -> /etc/alternatives/emblem-vendor-symbolic-scalable
+        emblem-vendor-white.svg -> /etc/alternatives/emblem-vendor-white-scalable
+
+1.2.1. Debian logos icons
+
+Several sizes of logo icons are shipped:
+    64, 128, 256 and scalable (svg)
+They can be found in:
+    /usr/share/icons/desktop-base/${size}x${size}/emblems/${emblem}.png
+    /usr/share/icons/desktop-base/emblems/${emblem}.svg
+
+[Legacy]
+Several sizes of legacy logo icons are shipped:
+    16, 22, 32, 36, 48, 64, 128, 256 and scalable (svg)
+They can be found in:
+    /usr/share/icons/hicolor/${size}x${size}/emblems/${emblem}.png
+    /usr/share/icons/hicolor/${size}x${size}/emblems/${emblem}.icon
+    /usr/share/icons/hicolor/scalable/emblems/${emblem}.svg
+    /usr/share/icons/hicolor/scalable/emblems/${emblem}.icon
+These will be removed after buster.
+
+1.2.2. Debian logos images
+
+The Debian logo images are shipped in:
+    /usr/share/desktop-base/debian-logos/
 
 A Debian security logo is also shipped in:
     /usr/share/pixmaps/debian-security.png
@@ -65,7 +123,7 @@ overridden defaults.
 grub-common to correctly update the GRUB background with the Debian theme when
 running « update-grub ».
 
-- Gnome desktop wallpaper and lock screen:
+- GNOME desktop wallpaper and lock screen:
     /usr/share/glib-2.0/schemas/10_desktop-base.gschema.override
 
 - Plasma 5 desktop wallpaper:
@@ -73,7 +131,7 @@ running « update-grub ».
 
     Plasma ensures this JavaScript script is run for every user once and only
 once for each Plasma version. It is run at user login time. See:
-http://userbase.kde.org/KDE_System_Administration/PlasmaDesktopScripting
+https://userbase.kde.org/KDE_System_Administration/PlasmaDesktopScripting
 
 1.5. Plymouth boot splashes
 
@@ -98,7 +156,7 @@ GRUB_CMDLINE_LINUX_DEFAULT variable. For example:
 elements to a given theme.
 This alternative is called « desktop-theme » and currently supports GRUB
 background, login manager background (SDDM, LightDM), Desktops wallpapers
-(Gnome, Plasma 5, XFCE, Mate…).
+(GNOME, Plasma 5, Xfce, Mate…).
 
 You can change the theme pack selection with:
     update-alternatives --config desktop-theme
@@ -158,7 +216,7 @@ via the desktop-theme alternative.
     /usr/share/images/desktop-base/desktop-background
 
     This is a single SVG file used by desktop environments that don’t require
-a more complex wallpaper setup (XFCE, MATE…).
+a more complex wallpaper setup (Xfce, MATE…).
 It defaults to the 1920x1080 version of the active theme wallpaper selected
 via the desktop-theme alternative.
 
@@ -167,7 +225,7 @@ via the desktop-theme alternative.
 - desktop-lockscreen.xml, alternative for:
     /usr/share/images/desktop-base/desktop-lockscreen.xml
 
-    These two XML files are used by Gnome to set the wallpaper and lock screen
+    These two XML files are used by GNOME to set the wallpaper and lock screen
 for all users who didn’t otherwise chose a wallpaper or lock screen themselves.
 It defaults to the wallpaper and lock screen for the active theme selected via
 the desktop-theme alternative.
@@ -224,19 +282,14 @@ A theme pack should contain the following elements:
    messages, fsck feedback… so it’s highly recommended to start with an
    existing script and adapt the background setup and animation to the needs
    of your theme.
-./plymouthd.default
--> Should be a drop in replacement for /usr/share/plymouth/plymouthd.defaults
-   selecting your team. This file is not currently used but when we finish
-   integrating plymouth with the themes pack system we’ll be able to handle
-   plymouth theme switching with the rest of the theme elements in Debian.
 
 ./login/background.svg
 -> To provide the login background alternative for LightDM, SDDM…
 
 ./gnome-wp-list.xml
--> To make the wallpaper and lock screen selectable in Gnome preferences.
+-> To make the wallpaper and lock screen selectable in GNOME preferences.
    This file describes a list of XML files, one for each image packs provided.
-   Gnome uses these image packs to select the most appropriate version of a
+   GNOME uses these image packs to select the most appropriate version of a
    wallpaper depending on the user’s screen resolution.
 
 ./wallpaper/gnome-background.xml
@@ -259,7 +312,7 @@ A theme pack should contain the following elements:
 ./lockscreen/metadata.desktop
 -> Lock screen background image pack.
    The gnome-background.xml describes the available resolutions for the image,
-   for use by Gnome.
+   for use by GNOME.
    The metadata.desktop contains the description and license of the image pack
    for use by Plasma 5.
    The various files in the images folder are the provided resolutions and
@@ -291,7 +344,7 @@ information about what’s going on with desktop themes in Debian.
 
 If you’ve suggestions for a better artwork, create or edit the images and open
 a 'wishlist' bug against desktop-base in our Bug Tracking System
-(http://bugs.debian.org/). Please attach the source file, preferably in SVG or
+(https://bugs.debian.org/). Please attach the source file, preferably in SVG or
 XCF format, and only propose work for which you’re the author.
 
 For us to be able to distribute your work in Debian, it will need to be under
@@ -303,7 +356,7 @@ https://wiki.debian.org/DebianDesktop/Artwork/Requirements
 
 4.2. Desktop environment maintainers
 
-desktop-base is used by Gnome, KDE’s Plasma 5, XFCE, Mate…
+desktop-base is used by GNOME, KDE’s Plasma 5, Xfce, Mate…
 
 If you’re responsible for a desktop environment in Debian and want to use
 desktop-base artwork, improve the support for your DE, or add additional
