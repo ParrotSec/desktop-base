@@ -1,3 +1,15 @@
+desktop-base (10.0.2+parrot1) testing; urgency=medium
+
+  * Override new Debian version.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Thu, 25 Apr 2019 01:41:11 +0200
+
+desktop-base (10.0.0+parrot2) testing; urgency=medium
+
+  * Minor fix to preinst.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Tue, 19 Mar 2019 18:56:37 +0100
+
 desktop-base (10.0.0+parrot1) testing; urgency=medium
 
   * Import new Debian release.
