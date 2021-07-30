@@ -1,3 +1,9 @@
+desktop-base (2:5.0+parrot2) lts; urgency=medium
+
+  * Prepare for Parrot 5.0 LTS.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Fri, 30 Jul 2021 22:17:20 +0200
+
 desktop-base (2:5.0+parrot1) lts; urgency=medium
 
   * Override new Devuan version.
