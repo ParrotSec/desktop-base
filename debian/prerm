@@ -10,34 +10,30 @@ if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
             vendor-logos \
             /usr/share/desktop-base/debian-logos
 
-    update-alternatives --remove \
-            vendor-logos \
-            /usr/share/desktop-base/kali-logos
-
     # Remove background alternatives for theme packages
     while read theme filename; do
         update-alternatives --remove \
             desktop-background \
-            /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename $priority
+            /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename
     done << EOF
-parrot 1024x768.png 100
-parrot 1280x1024.png 100
-parrot 1280x800.png 100
-parrot 1440x900.png 100
-parrot 1600x1200.png 100
-parrot 1920x1080.png 100
-parrot 1920x1200.png 100
-parrot 2560x1440.png 100
+parrot 1024x768.png
+parrot 1280x1024.png
+parrot 1280x800.png
+parrot 1440x900.png
+parrot 1600x1200.png
+parrot 1920x1080.png
+parrot 1920x1200.png
+parrot 2560x1440.png
 EOF
     # *Last* remove background *highest priority* alternatives for active theme
-    update-alternatives --remove desktop-background /usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.png
+    update-alternatives --remove desktop-background /usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.svg
 
     # Remove desktop-background.xml alternatives
     # For theme packages
     while read theme; do
         update-alternatives --remove \
             desktop-background.xml \
-            /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml $priority
+            /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml
     done << EOF
 parrot
 EOF
@@ -51,7 +47,7 @@ EOF
     while read theme; do
         update-alternatives --remove \
             desktop-lockscreen.xml \
-            /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml $priority
+            /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml
     done << EOF
 parrot
 EOF
@@ -82,27 +78,15 @@ EOF
             desktop-login-background \
             /usr/share/desktop-base/$theme-theme/login/$background
     done << EOF
-parrot background.jpg
+parrot background.svg
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
         desktop-login-background \
         /usr/share/desktop-base/active-theme/login/background.svg
 
-    # Remove GRUB alternatives
-    # Remove alternative for the GRUB background/colors config
-    while read theme priority; do
-        update-alternatives --remove \
-            desktop-grub.sh \
-            /usr/share/desktop-base/$theme-theme/grub/grub_background.sh
-    done << EOF
-parrot
-EOF
-    # Remove background alternatives
+    # Remove GRUB background alternatives
     while read theme ratio; do
-        update-alternatives --remove \
-            desktop-grub.sh \
-            /usr/share/desktop-base/$theme-theme/grub/grub_background.sh
         update-alternatives --remove \
             desktop-grub \
             /usr/share/desktop-base/$theme-theme/grub/grub-$ratio.png
@@ -141,6 +125,6 @@ EOF
     ## *Lastly* remove *highest priority* alternative
     update-alternatives --remove \
         desktop-theme \
-        /usr/share/desktop-base/futureprototype-theme
+        /usr/share/desktop-base/homeworld-theme
 
 fi

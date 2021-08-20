@@ -23,7 +23,9 @@ README for desktop-base
 
 1.1. Theme packs
 
-Four theme packs are currently provided:
+Six theme packs are currently provided:
+- Homeworld (default for Bullseye)
+- futurePrototype (default for Buster)
 - Soft Waves (default for Stretch)
 - Lines (default for Jessie)
 - Joy (default for Wheezy)
@@ -137,7 +139,7 @@ https://userbase.kde.org/KDE_System_Administration/PlasmaDesktopScripting
 
     desktop-base ships several Plymouth themes. To activate the default theme,
 install the plymouth and plymouth-themes packages and run:
-    plymouth-set-default-theme softwaves
+    plymouth-set-default-theme homeworld
 
 and update the initrd by running:
     update-initramfs -u

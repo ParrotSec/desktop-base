@@ -4,16 +4,4 @@ set -e
 # Tag to allow some debhelper commands to inject relevant code
 #DEBHELPER#
 
-if [ "${1}" = "upgrade" ]; then
-    if dpkg --compare-versions ${2} le "9.0.0~exp1"; then
-        # Remove alternatives for moreblue wallpapers we don’t ship anymore
-        while read background; do
-            update-alternatives --remove \
-                desktop-background \
-                /usr/share/images/desktop-base/$background
-        done << EOF
-moreblue-orbit-wallpaper.svg
-moreblue-orbit-wallpaper-widescreen.svg
-EOF
-    fi
-fi
+

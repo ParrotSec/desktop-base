@@ -1,6 +1,5 @@
 GRUB_THEMES=parrot-theme/grub
 DEFAULT_BACKGROUND=desktop-background
-VENDOR_LOGOS=debian-logos
 
 PIXMAPS=$(wildcard pixmaps/*.png)
 DESKTOPFILES=$(wildcard *.desktop)
@@ -26,9 +25,7 @@ build-emblems clean-emblems install-emblems:
 .PHONY: build-logos clean-logos install-logos
 build-logos clean-logos install-logos:
 	@target=`echo $@ | sed s/-logos//`; \
-	for vendor_logos in $(VENDOR_LOGOS); do \
-		$(MAKE) $$target -C $$vendor_logos || exit 1; \
-	done
+	$(MAKE) $$target -C debian-logos || exit 1;
 
 
 install: install-grub install-emblems install-logos install-local
