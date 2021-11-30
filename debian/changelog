@@ -1,3 +1,9 @@
+desktop-base (2:5.0+parrot3) lts-updates; urgency=medium
+
+  * Fix failing postinst script.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Wed, 01 Dec 2021 00:32:20 +0100
+
 desktop-base (2:5.0+parrot2) lts-updates; urgency=medium
 
   * Update for Parrot 5.0.

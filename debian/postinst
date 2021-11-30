@@ -139,16 +139,16 @@ EOF
 
     # Login theme
     # Highest priority for active theme
-    active_login_background=/usr/share/desktop-base/active-theme/login/background.svg
+    active_login_background=/usr/share/desktop-base/active-theme/login/background.jpg
     if [ -e ${active_login_background} ]; then
-        update-alternatives --install /usr/share/images/desktop-base/login-background.svg \
-            desktop-login-background ${active_login_background} 50
+        update-alternatives --install /usr/share/images/desktop-base/login-background.jpg \
+            desktop-login-background ${active_login_background} 80 || true
     fi
     # Alternatives for theme packages
     while read theme background priority; do
-        update-alternatives --install /usr/share/images/desktop-base/login-background.svg \
+        update-alternatives --install /usr/share/images/desktop-base/login-background.jpg \
             desktop-login-background \
-            /usr/share/desktop-base/$theme-theme/login/$background $priority
+            /usr/share/desktop-base/$theme-theme/login/$background $priority || true
     done << EOF
 
 parrot background.jpg 80
