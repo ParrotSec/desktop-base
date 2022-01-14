@@ -1,3 +1,11 @@
+desktop-base (2:5.0+parrot4) parrot-updates; urgency=medium
+
+  * Update grub wallpaper.
+  * Update Parrot logo for plymouth.
+  * Update (and fix) plymouth settings and alias creation.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Fri, 14 Jan 2022 02:13:40 +0100
+
 desktop-base (2:5.0+parrot3) lts-updates; urgency=medium
 
   * Fix failing postinst script.

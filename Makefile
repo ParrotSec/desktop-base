@@ -41,10 +41,10 @@ install-local:
 	mkdir -p $(DESTDIR)/usr/share/pixmaps
 	$(INSTALL_DATA) $(PIXMAPS) $(DESTDIR)/usr/share/pixmaps/
 
-	# Create a 'debian-theme' symlink in plymouth themes folder, pointing at the
+	# Create a 'parrot-theme' symlink in plymouth themes folder, pointing at the
 	# plymouth theme for the currently active 'desktop-theme' alternative.
 	mkdir -p $(DESTDIR)/usr/share/plymouth/themes
-	ln -s ../../desktop-base/active-theme/plymouth $(DESTDIR)/usr/share/plymouth/themes/debian-theme
+	ln -s ../../desktop-base/active-theme/plymouth $(DESTDIR)/usr/share/plymouth/themes/parrot-theme
 
 	# Set Plasma 5/KDE default wallpaper
 	install -d $(DESTDIR)/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates
