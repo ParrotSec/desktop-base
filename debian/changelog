@@ -1,3 +1,9 @@
+desktop-base (2:5.0+parrot5) parrot-updates; urgency=medium
+
+  * update plymouth theme.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Thu, 03 Feb 2022 01:22:14 +0100
+
 desktop-base (2:5.0+parrot4) parrot-updates; urgency=medium
 
   * Update grub wallpaper.
