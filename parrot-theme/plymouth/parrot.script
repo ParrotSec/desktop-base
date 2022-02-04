@@ -149,7 +149,7 @@ logo_pos.x = logo_center.x - logo_size/2;
 logo_pos.y = logo_center.y - logo_size/2;
 
 #------------------------------- Background ----------------------------------------
-bg_image = Image("background.jpg");
+bg_image = Image("background.png");
 bg_image_ratio = bg_image.GetWidth() / bg_image.GetHeight();
 if (screen_ratio > bg_image_ratio)
     bg_scale_factor = window_max.width / bg_image.GetWidth();

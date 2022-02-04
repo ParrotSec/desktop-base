@@ -1,3 +1,9 @@
+desktop-base (2:5.0+parrot6) parrot-updates; urgency=medium
+
+  * Use png format for plymouth background.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Fri, 04 Feb 2022 22:46:30 +0100
+
 desktop-base (2:5.0+parrot5) parrot-updates; urgency=medium
 
   * update plymouth theme.
