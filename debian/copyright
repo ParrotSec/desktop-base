@@ -13,6 +13,7 @@ Copyright: 2002, Colin Walters <walters@debian.org>
            2012, Eshat Cakar <info@eshat.de>
            2012, Paul Tagliamonte <paultag@debian.org>
            2014-2019, Aurélien COUDERC <coucouf@debian.org>
+           2012-2022, Jonathan Carter <jcc@debian.org>
 License: GPL-2+
 
 Files: pixmaps/debian-security.png
@@ -37,7 +38,8 @@ Files: lines-theme/*
        softwaves-theme/*
        moonlight-theme/*
        homeworld-theme/*
-Copyright: 2014-2018, Juliette Taka Belin <juliette.belin@logilab.fr>
+       emerald-theme/*
+Copyright: 2014-2022, Juliette Taka Belin <juliette.belin@logilab.fr>
 License: GPL-2+
 
 Files: futureprototype-theme/*

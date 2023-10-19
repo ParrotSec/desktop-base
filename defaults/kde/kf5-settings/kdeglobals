@@ -1,0 +1,8 @@
+[General]
+XftAntialias=true
+XftHintStyle=hintslight
+XftSubPixel=rgb
+BrowserApplication=firefox-esr.desktop
+
+[KDE]
+LookAndFeelPackage=org.debian.desktop

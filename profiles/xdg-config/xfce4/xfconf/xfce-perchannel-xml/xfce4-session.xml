@@ -8,7 +8,7 @@
         <property name="Font" type="string" value="Sans 8"/>
         <property name="BgColor" type="string" value="#214068"/>
         <property name="FgColor" type="string" value="#d2dae6"/>
-        <property name="Image" type="string" value="/usr/share/images/desktop-base/desktop-background"/>
+        <property name="Image" type="string" value="/usr/share/images/desktop-base/desktop-splash"/>
       </property>
     </property>
   </property>

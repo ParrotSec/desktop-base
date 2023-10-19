@@ -1,0 +1,9 @@
+[Plymouth Theme]
+Name=parrot6
+Description=A glitch-inspired theme for Parrot 6
+Comment=created By Aditya Shakya (@adi1090x) and modified by Lorenzo Faletra (palinuro)
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/parrot6
+ScriptFile=/usr/share/plymouth/themes/parrot6/parrot6.script

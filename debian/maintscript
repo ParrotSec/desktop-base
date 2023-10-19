@@ -1,3 +1,1 @@
-# Remove obsolete KDM conf file used to override default theme
-rm_conffile /etc/default/kdm.d/10_desktop-base 9.0.0~ desktop-base
 

@@ -1,0 +1,17 @@
+{
+    "KPlugin": {
+        "Name": "Parrot Lorikeet",
+        "Id": "ParrotLorikeet",
+        "License": "GPLv3",
+        "Authors": [
+            {
+                "Name": "Lorenzo Palinuro Faletra",
+                "Email": "palinuro@parrotsec.org"
+            },
+            {
+                "Name": "Giulia Sh4rk Stabile",
+                "Email": "sh4rk@parrotsec.org"
+            }
+        ]
+    }
+}

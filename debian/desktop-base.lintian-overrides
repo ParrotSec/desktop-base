@@ -1,7 +1,14 @@
 # The following folders are created in order to point alternatives to them.
 # They filled by update-alternatives in postinst during installation.
-desktop-base binary: package-contains-empty-directory usr/share/icons/vendor/128x128/emblems/
-desktop-base binary: package-contains-empty-directory usr/share/icons/vendor/256x256/emblems/
-desktop-base binary: package-contains-empty-directory usr/share/icons/vendor/64x64/emblems/
-desktop-base binary: package-contains-empty-directory usr/share/icons/vendor/scalable/emblems/
+desktop-base binary: package-contains-empty-directory [usr/share/icons/vendor/128x128/emblems/]
+desktop-base binary: package-contains-empty-directory [usr/share/icons/vendor/256x256/emblems/]
+desktop-base binary: package-contains-empty-directory [usr/share/icons/vendor/64x64/emblems/]
+desktop-base binary: package-contains-empty-directory [usr/share/icons/vendor/scalable/emblems/]
 
+# We do want the debian in circle logo to be copied for newly created users
+desktop-base: package-contains-file-in-etc-skel [etc/skel/.face.icon]
+desktop-base: package-contains-file-in-etc-skel [etc/skel/.face]
+
+# to make lintian/ftp-master happy :-/
+desktop-base: package-contains-file-in-etc-skel etc/skel/.face.icon
+desktop-base: package-contains-file-in-etc-skel etc/skel/.face

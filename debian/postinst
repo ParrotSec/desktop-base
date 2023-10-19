@@ -4,6 +4,18 @@ set -e
 # Tag to allow some debhelper commands to inject relevant code
 #DEBHELPER#
 
+if [ "${1}" = "configure" ] && [ ! -z "${2}" ]; then
+    if dpkg --compare-versions ${2} le "9.0.0~exp1"; then
+        # Try remove folder if empty, left after 9.0.0~exp1 conf suppression
+        # by debhelper conffile handling
+        OLD_KDM_DIR=/etc/default/kdm.d
+        if [ -d ${OLD_KDM_DIR} ] ; then
+            echo "Removing old KDM configuration directory \"${OLD_KDM_DIR}\""
+            rmdir ${OLD_KDM_DIR} || true
+        fi
+    fi
+fi
+
 if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remove" ]; then
     # Vendor logo alternative
     update-alternatives --install \
@@ -54,11 +66,11 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remov
             desktop-theme \
             /usr/share/desktop-base/$theme-theme $priority
     done << EOF
-parrot 80
+parrot 70
 EOF
 
     # Use active theme as highest priority for background
-    active_background=/usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.svg
+    active_background=/usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.jpg
     if [ -e ${active_background} ]; then
         update-alternatives --install \
             /usr/share/images/desktop-base/desktop-background \
@@ -71,14 +83,7 @@ EOF
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename $priority
     done << EOF
-parrot 1024x768.png 80
-parrot 1280x1024.png 80
-parrot 1280x800.png 80
-parrot 1440x900.png 80
-parrot 1600x1200.png 80
-parrot 1920x1080.png 80
-parrot 1920x1200.png 80
-parrot 2560x1440.png 80
+parrot 1920x1080.jpg 70
 EOF
 
     # Set up an alternative for the XML version of the background
@@ -97,7 +102,7 @@ EOF
             desktop-background.xml \
             /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml $priority
     done << EOF
-parrot 80
+parrot 70
 EOF
 
     # Set up an alternative for the XML version of the lock screen
@@ -116,7 +121,7 @@ EOF
             desktop-lockscreen.xml \
             /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml $priority
     done << EOF
-parrot 80
+parrot 70
 EOF
 
     # Set up an alternative for the wallpaper for Plasma 5/KDE
@@ -134,7 +139,7 @@ EOF
             desktop-plasma5-wallpaper \
             /usr/share/desktop-base/$theme-theme/wallpaper $priority
     done << EOF
-parrot 80
+parrot 70
 EOF
 
     # Login theme
@@ -142,16 +147,15 @@ EOF
     active_login_background=/usr/share/desktop-base/active-theme/login/background.jpg
     if [ -e ${active_login_background} ]; then
         update-alternatives --install /usr/share/images/desktop-base/login-background.jpg \
-            desktop-login-background ${active_login_background} 80 || true
+            desktop-login-background ${active_login_background} 50
     fi
     # Alternatives for theme packages
     while read theme background priority; do
         update-alternatives --install /usr/share/images/desktop-base/login-background.jpg \
             desktop-login-background \
-            /usr/share/desktop-base/$theme-theme/login/$background $priority || true
+            /usr/share/desktop-base/$theme-theme/login/$background $priority
     done << EOF
-
-parrot background.jpg 80
+parrot background.jpg 70
 EOF
 
     # Set up an alternative for the GRUB background/colors config
@@ -194,8 +198,8 @@ EOF
             desktop-grub.sh \
             /usr/share/desktop-base/$theme-theme/grub/grub_background.sh
     done << EOF
-parrot 4x3 80
-parrot 16x9 80
+parrot 4x3 70
+parrot 16x9 70
 EOF
 
     # Apply GRUB background update into /boot

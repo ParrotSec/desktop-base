@@ -16,14 +16,38 @@ if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename
     done << EOF
-parrot 1024x768.png
-parrot 1280x1024.png
-parrot 1280x800.png
-parrot 1440x900.png
-parrot 1600x1200.png
-parrot 1920x1080.png
-parrot 1920x1200.png
-parrot 2560x1440.png
+emerald 1920x1080.svg
+homeworld 1920x1080.svg
+futureprototype 1920x1080.svg
+moonlight 1920x1080.svg
+softwaves 1024x768.svg
+softwaves 1280x720.svg
+softwaves 1280x800.svg
+softwaves 1280x1024.svg
+softwaves 1600x1200.svg
+softwaves 1920x1080.svg
+softwaves 1920x1200.svg
+softwaves 2560x1440.svg
+softwaves 2560x1600.svg
+lines 1280x1024.svg
+lines 1600x1200.svg
+lines 1920x1080.svg
+lines 1920x1200.svg
+lines 2560x1080.svg
+joy 1280x720.svg
+joy 1280x1024.svg
+joy 1600x1200.svg
+joy 1920x1080.svg
+joy 1920x1200.svg
+joy-inksplat 1280x720.svg
+joy-inksplat 1280x1024.svg
+joy-inksplat 1600x1200.svg
+joy-inksplat 1920x1080.svg
+joy-inksplat 1920x1200.svg
+spacefun 1280x720.svg
+spacefun 1280x1024.svg
+spacefun 1920x1080.svg
+spacefun 1920x1200.svg
 EOF
     # *Last* remove background *highest priority* alternatives for active theme
     update-alternatives --remove desktop-background /usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.svg
@@ -35,7 +59,15 @@ EOF
             desktop-background.xml \
             /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml
     done << EOF
-parrot
+emerald
+homeworld
+futureprototype
+moonlight
+softwaves
+lines
+joy
+joy-inksplat
+spacefun
 EOF
     # *Lastly* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -49,7 +81,14 @@ EOF
             desktop-lockscreen.xml \
             /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml
     done << EOF
-parrot
+emerald
+homeworld
+futureprototype
+moonlight
+softwaves
+lines
+joy
+spacefun
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -63,7 +102,15 @@ EOF
             desktop-plasma5-wallpaper \
             /usr/share/desktop-base/$theme-theme/wallpaper
     done << EOF
-parrot
+emerald
+homeworld
+futureprototype
+moonlight
+softwaves
+lines
+joy
+joy-inksplat
+spacefun
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -78,7 +125,15 @@ EOF
             desktop-login-background \
             /usr/share/desktop-base/$theme-theme/login/$background
     done << EOF
-parrot background.svg
+emerald background.svg
+homeworld background.svg
+futureprototype background.svg
+moonlight background.svg
+softwaves background.svg
+lines background.svg
+lines background-nologo.svg
+joy background.svg
+spacefun background.svg
 EOF
     # *Last* remove *highest priority* alternative for active theme
     update-alternatives --remove \
@@ -91,8 +146,22 @@ EOF
             desktop-grub \
             /usr/share/desktop-base/$theme-theme/grub/grub-$ratio.png
     done << EOF
-parrot 4x3
-parrot 16x9
+emerald 4x3
+emerald 16x9
+homeworld 4x3
+homeworld 16x9
+futureprototype 4x3
+futureprototype 16x9
+moonlight 4x3
+moonlight 16x9
+softwaves 4x3
+softwaves 16x9
+lines 4x3
+lines 16x9
+joy 4x3
+joy 16x9
+spacefun 4x3
+spacefun 16x9
 EOF
     ## *Lastly* remove *highest priority* alternative
     num_grub_efi_installed=$(dpkg-query --list "grub-efi*" 2> /dev/null | grep "^i" | wc -l)
@@ -120,7 +189,14 @@ EOF
             desktop-theme \
             /usr/share/desktop-base/$theme-theme
     done << EOF
-parrot
+emerald
+futureprototype
+moonlight
+softwaves
+lines
+joy
+joy-inksplat
+spacefun
 EOF
     ## *Lastly* remove *highest priority* alternative
     update-alternatives --remove \

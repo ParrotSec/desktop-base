@@ -1,3 +1,11 @@
+desktop-base (2:6.0+parrot1) lory-updates; urgency=medium
+
+  * Update parrot logo.
+  * Update parrot themes.
+  * Update parrot wallpaper.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Thu, 19 Oct 2023 03:32:13 +0200
+
 desktop-base (2:5.0+parrot6) parrot-updates; urgency=medium
 
   * Use png format for plymouth background.

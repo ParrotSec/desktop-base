@@ -1,20 +1,19 @@
 Source: desktop-base
 Section: x11
 Priority: optional
-XSBC-Original-Maintainer: Debian Desktop Team <debian-desktop@lists.debian.org>
-Maintainer: Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>
-Uploaders: Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>
+Maintainer: Lorenzo Palinuro Faletra <palinuro@parrotsec.org>
+Uploaders: Lorenzo Palinuro Faletra <palinuro@parrotsec.org>
 Build-Depends: debhelper (>= 13),
+               inkscape,
                librsvg2-bin,
                optipng,
 # For the number in debian-logo-text
                fonts-quicksand,
 Rules-Requires-Root: no
-Standards-Version: 4.5.0
+Standards-Version: 4.6.2
 Homepage: https://www.debian.org/devel/debian-desktop/
-Vcs-Browser: https://nest.parrotsec.org/debian-packages/desktop-base
-Vcs-Git: https://nest.parrotsec.org/debian-packages/desktop-base.git
-
+Vcs-Browser: https://salsa.debian.org/debian-desktop-team/desktop-base
+Vcs-Git: https://salsa.debian.org/debian-desktop-team/desktop-base.git
 
 Package: desktop-base
 Architecture: all
@@ -22,7 +21,7 @@ Depends: librsvg2-common,
 # For the login background with logo
          fonts-quicksand,
 Recommends: plymouth-label
-Suggests: gnome | kde-standard | xfce4 | wmaker
+Suggests: parrot-desktop-mate | parrot-desktop-kde
 Description: common files for the Parrot Desktop
  This package contains various miscellaneous files which are used by
  Debian Desktop installations.  Currently, it provides some
@@ -30,5 +29,3 @@ Description: common files for the Parrot Desktop
  Debian related material (suitable for placement on a user's desktop),
  and other common files between the available desktop environments
  such as GNOME and KDE.
- .
- This package was customized for Parrot Security.

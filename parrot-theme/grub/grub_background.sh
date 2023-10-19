@@ -1,3 +1,3 @@
 WALLPAPER=/usr/share/images/desktop-base/desktop-grub.png
-set color_normal=cyan/black
-set color_highlight=black/cyan
+COLOR_NORMAL=cyan/black
+COLOR_HIGHLIGHT=black/cyan

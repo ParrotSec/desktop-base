@@ -24,6 +24,7 @@ README for desktop-base
 1.1. Theme packs
 
 Six theme packs are currently provided:
+- Emerald (default for Bookworm)
 - Homeworld (default for Bullseye)
 - futurePrototype (default for Buster)
 - Soft Waves (default for Stretch)
