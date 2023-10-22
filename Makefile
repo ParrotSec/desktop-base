@@ -81,7 +81,7 @@ install-local:
 	install -d $(DESTDIR)/usr/share/plymouth/themes/parrot6
 	$(INSTALL_DATA) $(wildcard parrot-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/parrot6
 	install -d $(DESTDIR)/usr/share/desktop-base/parrot-theme
-	cd $(DESTDIR)/usr/share/desktop-base/parrot-theme && ln -s /usr/share/plymouth/themes/parrot6 plymouth
+	#cd $(DESTDIR)/usr/share/desktop-base/parrot-theme && ln -s /usr/share/plymouth/themes/parrot6 plymouth
 	### Login background
 	install -d $(DESTDIR)/usr/share/desktop-base/parrot-theme/login
 	$(INSTALL_DATA) $(wildcard parrot-theme/login/*) $(DESTDIR)/usr/share/desktop-base/parrot-theme/login
@@ -91,7 +91,7 @@ install-local:
 	$(INSTALL_DATA) parrot-theme/wallpaper/metadata.json $(DESTDIR)/usr/share/desktop-base/parrot-theme/wallpaper
 	$(INSTALL_DATA) parrot-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/parrot-theme/wallpaper
 	$(INSTALL_DATA) $(wildcard parrot-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/parrot-theme/wallpaper/contents/images/
-	$(INSTALL_DATA) parrot-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/debian-parrot.xml
+	$(INSTALL_DATA) parrot-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/parrot-lorikeet.xml
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
 	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/parrot-theme/wallpaper parrot
@@ -104,6 +104,6 @@ install-local:
 
 	# Lock screen symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
-	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/parrot-theme/wallpaper parrot_wallpaper
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/parrot-theme/wallpaper parrot_lorikeet
 
 include Makefile.inc

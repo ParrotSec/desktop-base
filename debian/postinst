@@ -224,3 +224,6 @@ EOF
     fi
 
 fi
+
+plymouth-set-default-theme parrot6 || true
+update-initramfs -u || true

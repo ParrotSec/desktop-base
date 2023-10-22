@@ -1,3 +1,15 @@
+desktop-base (2:6.0+parrot3) lory-updates; urgency=medium
+
+  * Set parrot6 plymouth theme as default.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Sun, 22 Oct 2023 17:08:27 +0200
+
+desktop-base (2:6.0+parrot2) lory-updates; urgency=medium
+
+  * * Don't remove grub png files.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Fri, 20 Oct 2023 05:17:13 +0200
+
 desktop-base (2:6.0+parrot1) lory-updates; urgency=medium
 
   * Update parrot logo.

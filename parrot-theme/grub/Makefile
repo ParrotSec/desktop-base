@@ -2,15 +2,16 @@ dir = usr/share/desktop-base/parrot-theme/grub
 
 .PHONY: build clean install
 
-files = \
-	grub-4x3.png \
-	grub-16x9.png
+#files = \
+#	grub-4x3.png \
+#	grub-16x9.png
 
-build: $(files)
+#build: $(files)
+build:
 
 clean:
-	rm -f grub-4x3.png.raw grub-16x9.png.raw
-	rm -f grub-4x3.png grub-16x9.png
+#	rm -f grub-4x3.png.raw grub-16x9.png.raw
+#	rm -f grub-4x3.png grub-16x9.png
 
 install:
 	install -d $(DESTDIR)/$(dir)
