@@ -1,3 +1,9 @@
+desktop-base (2:7.0+parrot1) echo; urgency=medium
+
+  * Update themes for Parrot 7.0.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Thu, 04 Dec 2025 11:19:16 +0100
+
 desktop-base (2:6.0+parrot3) lory-updates; urgency=medium
 
   * Set parrot6 plymouth theme as default.
