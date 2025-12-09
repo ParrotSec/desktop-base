@@ -1,3 +1,9 @@
+desktop-base (2:7.0+parrot2) echo; urgency=medium
+
+  * Use boxless grub background.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Tue, 09 Dec 2025 16:24:06 +0100
+
 desktop-base (2:7.0+parrot1) echo; urgency=medium
 
   * Update themes for Parrot 7.0.
