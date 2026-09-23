@@ -1,3 +1,12 @@
+desktop-base (2:7.0+parrot3) echo; urgency=medium
+
+  * Drop LookAndFeelPackage from the kf5-settings layer: the default
+    look-and-feel is now owned by parrot-core (/etc/xdg/kdeglobals).
+  * Drop the kf5-settings baloofilerc override: Baloo is globally
+    disabled by parrot-core.
+
+ -- Lorenzo "Palinuro" Faletra <palinuro@parrotsec.org>  Wed, 23 Sep 2026 16:27:26 +0200
+
 desktop-base (2:7.0+parrot2) echo; urgency=medium
 
   * Use boxless grub background.

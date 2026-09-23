@@ -4,5 +4,8 @@ XftHintStyle=hintslight
 XftSubPixel=rgb
 BrowserApplication=firefox-esr.desktop
 
-[KDE]
-LookAndFeelPackage=org.debian.desktop
+# LookAndFeelPackage is intentionally NOT set in this layer anymore.
+# The default look-and-feel is owned by parrot-core (/etc/xdg/kdeglobals,
+# org.echo.desktop). This layer (/usr/share/desktop-base/kf5-settings, added
+# to XDG_CONFIG_DIRS by /etc/xdg/plasma-workspace/env/env.sh) has LOWER
+# priority than /etc/xdg, so setting the key here would be dead config.
